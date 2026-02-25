@@ -1,0 +1,8 @@
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/App.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/db/daos/DataSourceFactory.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/db/daos/PersonDao.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/model/Person.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/service/PersonService.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/view/MainLayoutController.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/view/PersonAddController.java
+/Users/dumasantonin/Documents/GitHub/Java_Projet/App/src/main/java/com/mycompany/app/view/PersonAdminController.java

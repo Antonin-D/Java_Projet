@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.app.view.PersonAddController">
+   <children>
+      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="titre-page" text="Voici le formulaire d'ajout de contact : ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="Nom : " />
+      <TextField fx:id="lastnameInput" />
+      <Label text="Prénom : " />
+      <TextField fx:id="firstnameInput" />
+      <Label text="Surnom : " />
+      <TextField fx:id="nicknameInput" />
+      <Label text="Téléphone" />
+      <TextField fx:id="phoneInput" />
+      <Label text="Adresse" />
+      <TextField fx:id="addressInput" />
+      <Label text="Email" />
+      <TextField fx:id="emailInput" />
+      <Label text="Date de naissance" />
+      <DatePicker fx:id="birthDateInput" />
+      <Label />
+      <Button mnemonicParsing="false" onAction="#handleSavePerson" text="Sauvegarder" />
+   </children>
+</VBox>
