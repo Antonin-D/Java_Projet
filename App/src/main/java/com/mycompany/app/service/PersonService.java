@@ -1,7 +1,7 @@
 package com.mycompany.app.service;
 
 import com.mycompany.app.db.daos.PersonDao;
-import com.mycompany.app.model.Person;
+import com.mycompany.app.db.entities.Person;
 import java.util.List;
 
 public class PersonService {

@@ -1,7 +1,7 @@
 package com.mycompany.app.view;
 
 import com.mycompany.app.db.daos.PersonDao; 
-import com.mycompany.app.model.Person; 
+import com.mycompany.app.db.entities.Person;
 import javafx.collections.FXCollections; 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML; 

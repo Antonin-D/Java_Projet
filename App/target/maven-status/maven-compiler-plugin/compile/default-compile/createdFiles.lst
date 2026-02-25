@@ -1,8 +1,8 @@
 com/mycompany/app/db/daos/PersonDao.class
 com/mycompany/app/db/daos/DataSourceFactory.class
+com/mycompany/app/db/entities/Person.class
 com/mycompany/app/App.class
 com/mycompany/app/view/MainLayoutController.class
-com/mycompany/app/model/Person.class
 com/mycompany/app/service/PersonService.class
 com/mycompany/app/view/PersonAddController.class
 com/mycompany/app/view/PersonAdminController.class

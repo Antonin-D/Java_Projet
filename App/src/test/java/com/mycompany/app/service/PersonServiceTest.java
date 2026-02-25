@@ -1,6 +1,6 @@
 package com.mycompany.app.service;
 
-import com.mycompany.app.model.Person;
+import com.mycompany.app.db.entities.Person;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
@@ -12,7 +12,6 @@ public class PersonServiceTest {
     
     private PersonService personService;
 
-    // @BeforeEach s'exécute automatiquement AVANT chaque test (@Test)
     @BeforeEach
     public void setUp() {
         personService = new PersonService();
