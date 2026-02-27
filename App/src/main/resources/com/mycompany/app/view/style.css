@@ -1,7 +1,7 @@
 /* --- Arrière-plan général et typographie --- */
 .root {
     -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    -fx-background-color: #f4f7f6; /* Gris très clair/bleuté */
+    -fx-background-color: #f4f7f6; 
     -fx-font-size: 14px;
 }
 
@@ -13,14 +13,15 @@
 
 /* --- Style des Boutons --- */
 .button {
-    -fx-background-color: #007bff; /* Bleu moderne */
+    -fx-background-color: #007bff; 
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-background-radius: 6px; /* Bords arrondis */
+    -fx-background-radius: 6px; 
     -fx-padding: 8px 16px;
     -fx-cursor: hand;
 }
 
+/* Titre de chaque page */
 .titre-page {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
@@ -28,11 +29,12 @@
     -fx-alignment: center;
 }
 
+/* Bouton au survol */
 .button:hover {
-    -fx-background-color: #0056b3; /* Bleu plus foncé au survol */
+    -fx-background-color: #0056b3; 
 }
 
-/* Bouton pour le menu latéral (plus discret) */
+/* Menu latéral discret */
 .menu-button {
     -fx-background-color: transparent;
     -fx-text-fill: #333333;
@@ -43,7 +45,7 @@
     -fx-background-color: #e2e6ea;
 }
 
-/* --- Style des Champs de texte et DatePicker --- */
+/* Champs de texte et calendrier */
 .text-field, .date-picker > .text-field {
     -fx-background-color: white;
     -fx-border-color: #ced4da;
@@ -52,8 +54,9 @@
     -fx-padding: 8px;
 }
 
+/* Focus du champ de texte */
 .text-field:focused, .date-picker:focused > .text-field {
-    -fx-border-color: #80bdff; /* Halo bleu quand on clique dedans */
+    -fx-border-color: #80bdff; 
     -fx-effect: dropshadow(three-pass-box, rgba(0,123,255,0.25), 6, 0, 0, 0);
 }
 
@@ -63,20 +66,30 @@
     -fx-border-color: #dee2e6;
     -fx-border-radius: 5px;
 }
+
+/* En-têtes du tableau */
 .table-view .column-header-background {
     -fx-background-color: #e9ecef;
 }
+
+/* Colonnes du tableau */
 .table-view .column-header {
     -fx-background-color: transparent;
     -fx-size: 40px;
     -fx-font-weight: bold;
 }
+
+/* Lignes du tableau */
 .table-row-cell {
     -fx-cell-size: 40px;
 }
+
+/* Lignes alternées pour contraste */
 .table-row-cell:odd {
-    -fx-background-color: #f8f9fa; /* Lignes zébrées */
+    -fx-background-color: #f8f9fa; 
 }
+
+/* Ligne sélectionnée */
 .table-row-cell:selected {
-    -fx-background-color: #007bff; /* Ligne sélectionnée en bleu */
+    -fx-background-color: #007bff; 
 }
