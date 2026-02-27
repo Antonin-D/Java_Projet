@@ -27,3 +27,6 @@ App/target/test-classes/.DS_Store
 App/target/test-classes/com/.DS_Store
 App/target/test-classes/com/mycompany/.DS_Store
 App/target/test-classes/com/mycompany/app/.DS_Store
+
+App/target/
+*.class
