@@ -6,23 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.app.view.PersonAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.app.view.PersonListController">
+
    <children>
       <Label layoutX="167.0" layoutY="23.0" styleClass="titre-page" text="Voici la liste des contacts : " textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
+
       <TableView fx:id="personTable" layoutX="-1.0" layoutY="70.0" prefHeight="330.0" prefWidth="600.0">
-        <columns>
-          <TableColumn fx:id="lastnameColumn" prefWidth="59.0" text="Nom" />
-          <TableColumn fx:id="firstnameColumn" prefWidth="94.0" text="Prénom" />
-            <TableColumn fx:id="nicknameColumn" prefWidth="73.0" text="Surnom" />
-            <TableColumn fx:id="phoneColumn" prefWidth="84.0" text="Téléphone" />
-            <TableColumn fx:id="emailColumn" prefWidth="69.0" text="Email" />
-            <TableColumn fx:id="addressColumn" prefWidth="90.0" text="Adresse" />
+         <columns>
+            <TableColumn fx:id="lastnameColumn"  prefWidth="59.0"  text="Nom" />
+            <TableColumn fx:id="firstnameColumn" prefWidth="94.0"  text="Prénom" />
+            <TableColumn fx:id="nicknameColumn"  prefWidth="73.0"  text="Surnom" />
+            <TableColumn fx:id="phoneColumn"     prefWidth="84.0"  text="Téléphone" />
+            <TableColumn fx:id="emailColumn"     prefWidth="69.0"  text="Email" />
+            <TableColumn fx:id="addressColumn"   prefWidth="90.0"  text="Adresse" />
             <TableColumn fx:id="birthDateColumn" prefWidth="138.0" text="Date de naissance" />
-        </columns>
+         </columns>
       </TableView>
    </children>
 </AnchorPane>

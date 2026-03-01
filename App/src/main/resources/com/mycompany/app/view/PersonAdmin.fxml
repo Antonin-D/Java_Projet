@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="16"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mycompany.app.view.PersonAdminController"
+      stylesheets="@../../../css/style.css">
+
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <!-- Titre -->
+    <Label text="Gestion des contacts" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Tableau des contacts -->
+    <TableView fx:id="personTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="lastnameColumn"  text="Nom"        prefWidth="120"/>
+            <TableColumn fx:id="firstnameColumn" text="Prénom"     prefWidth="120"/>
+            <TableColumn fx:id="nicknameColumn"  text="Surnom"     prefWidth="100"/>
+            <TableColumn fx:id="phoneColumn"     text="Téléphone"  prefWidth="110"/>
+            <TableColumn fx:id="emailColumn"     text="Email"      prefWidth="160"/>
+            <TableColumn fx:id="addressColumn"   text="Adresse"    prefWidth="160"/>
+            <TableColumn fx:id="birthDateColumn" text="Naissance"  prefWidth="100"/>
+            <TableColumn fx:id="actionsColumn"   text="Actions"    prefWidth="180"/>
+        </columns>
+        <placeholder>
+            <Label text="Aucun contact dans la base de données."/>
+        </placeholder>
+    </TableView>
+
+    <!-- Séparateur -->
+    <Separator/>
+
+    <!-- Formulaire de modification -->
+    <TitledPane text="Modifier un contact (cliquez sur ✏ Modifier dans le tableau)" collapsible="false"
+                style="-fx-font-weight: bold;">
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <GridPane hgap="12" vgap="8">
+                <!-- Colonne 0 : labels | Colonne 1 : champs -->
+                <columnConstraints>
+                    <ColumnConstraints minWidth="100" prefWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints minWidth="100" prefWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <!-- Ligne 0 -->
+                <Label text="Nom *"       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="editLastname"  GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="Nom de famille"/>
+
+                <Label text="Prénom *"    GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="editFirstname" GridPane.columnIndex="3" GridPane.rowIndex="0" promptText="Prénom"/>
+
+                <!-- Ligne 1 -->
+                <Label text="Surnom *"    GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="editNickname"  GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Surnom"/>
+
+                <Label text="Téléphone"   GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="editPhone"     GridPane.columnIndex="3" GridPane.rowIndex="1" promptText="Numéro de téléphone"/>
+
+                <!-- Ligne 2 -->
+                <Label text="Email"       GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="editEmail"     GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Adresse e-mail"/>
+
+                <Label text="Adresse"     GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <TextField fx:id="editAddress"   GridPane.columnIndex="3" GridPane.rowIndex="2" promptText="Adresse postale"/>
+
+                <!-- Ligne 3 -->
+                <Label text="Naissance"   GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <DatePicker fx:id="editBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="jj/mm/aaaa"/>
+            </GridPane>
+
+            <!-- Boutons -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Annuler"      onAction="#handleCancelEdit"
+                        style="-fx-background-color: #888; -fx-text-fill: white;"/>
+                <Button text="💾 Enregistrer" onAction="#handleSaveEdit"
+                        style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+
+        </VBox>
+    </TitledPane>
+
+</VBox>

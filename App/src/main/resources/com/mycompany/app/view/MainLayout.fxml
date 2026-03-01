@@ -10,6 +10,7 @@
          <children>
             <Button mnemonicParsing="false" onAction="#showListPersons" prefHeight="34.0" prefWidth="465.0" text="Liste des contacts" />
             <Button mnemonicParsing="false" onAction="#showAddPerson" prefHeight="30.0" prefWidth="168.0" text="Ajouter un contact" />
+            <Button mnemonicParsing="false" onAction="#showAdminPersons" prefHeight="30.0" prefWidth="168.0" text="Gérer les contacts"/>
          </children>
       </VBox>
    </left>

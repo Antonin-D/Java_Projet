@@ -1,7 +1,7 @@
 package com.mycompany.app.view;
 
 import javafx.fxml.FXML;
-import javafx.scene.layout.BorderPane; 
+import javafx.scene.layout.BorderPane;
 import com.mycompany.app.App;
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import java.io.IOException;
  * Il gère le conteneur principal et permet de changer la vue affichée au centre.
  */
 public class MainLayoutController {
-    // Le conteneur principal de la fenêtre, lié au MainLayout.fxml
+
     @FXML
     private BorderPane mainBorderPane;
 
@@ -19,8 +19,8 @@ public class MainLayoutController {
      * Charge le fichier PersonList.fxml et l'affiche au centre de l'écran.
      * * @throws IOException Si le fichier FXML n'est pas trouvé
      */
-    @FXML 
-    private void showListPersons() throws IOException{
+    @FXML
+    private void showListPersons() throws IOException {
         mainBorderPane.setCenter(App.loadFXML("PersonList"));
     }
 
@@ -32,5 +32,15 @@ public class MainLayoutController {
     @FXML
     private void showAddPerson() throws IOException {
         mainBorderPane.setCenter(App.loadFXML("PersonAdd"));
+    }
+
+    /**
+     * Méthode appelée lors du clic sur le bouton "Gérer les contacts".
+     * Charge le fichier PersonAdmin.fxml et l'affiche au centre de l'écran.
+     * * @throws IOException Si le fichier FXML n'est pas trouvé
+     */
+    @FXML
+    private void showAdminPersons() throws IOException {
+        mainBorderPane.setCenter(App.loadFXML("PersonAdmin"));
     }
 }

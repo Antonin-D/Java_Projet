@@ -19,4 +19,12 @@ public class PersonService {
     public Person addPerson(Person person) {
         return personDao.addPerson(person);
     }
+
+    public void updatePerson(Person person) {
+        personDao.updatePerson(person);
+    }
+
+    public void deletePerson(Integer id) {
+        personDao.deletePerson(id);
+    }
 }
