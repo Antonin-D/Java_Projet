@@ -5,26 +5,58 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<VBox spacing="8"
+      alignment="TOP_CENTER"
+      prefHeight="600.0"
+      prefWidth="750.0"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.app.view.PersonAdminController"
+      stylesheets="@style.css PersonnAdd.css"
+      styleClass="background">
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.app.view.PersonListController">
+    <!-- Titre -->
+    <Label text="Liste des contacts" styleClass="page-title">
+        <font>
+            <Font size="26.0"/>
+    </font>
+    </Label>
+    <!-- Sous-titre -->
+    <Label text="Retrouvez ici l'ensemble des contacts enregistrés dans l'application."
+           styleClass="subtitle"/>
 
-   <children>
-      <Label layoutX="167.0" layoutY="23.0" styleClass="titre-page" text="Voici la liste des contacts : " textOverrun="CLIP">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font>
-      </Label>
+    <!-- Tableau dans une card -->
+    <VBox styleClass="form-container" VBox.vgrow="ALWAYS" maxWidth="700" prefWidth="9999">
+        <padding>
+            <Insets bottom="20"/>
+        </padding>
+        <!-- Barre de recherche -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="🔍" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="searchField"
+                       promptText="Rechercher par nom, prénom, email..."
+                       HBox.hgrow="ALWAYS"
+                       prefWidth="280"/>
+        </HBox>
+        <TableView fx:id="personTable"
+                   
+                   prefWidth="9999"
+                   prefHeight="380">
+            <columns>
+                <TableColumn fx:id="lastnameColumn"   text="Nom"               prefWidth="90"/>
+                <TableColumn fx:id="firstnameColumn"  text="Prénom"            prefWidth="100"/>
+                <TableColumn fx:id="nicknameColumn"   text="Surnom"            prefWidth="90"/>
+                <TableColumn fx:id="phoneColumn"      text="Téléphone"         prefWidth="110"/>
+                <TableColumn fx:id="emailColumn"      text="Email"             prefWidth="140"/>
+                <TableColumn fx:id="addressColumn"    text="Adresse"           prefWidth="130"/>
+                <TableColumn fx:id="birthDateColumn"  text="Date de naissance" prefWidth="130"/>
+            </columns>
+        </TableView>
+    </VBox>
 
-      <TableView fx:id="personTable" layoutX="-1.0" layoutY="70.0" prefHeight="330.0" prefWidth="600.0">
-         <columns>
-            <TableColumn fx:id="lastnameColumn"  prefWidth="59.0"  text="Nom" />
-            <TableColumn fx:id="firstnameColumn" prefWidth="94.0"  text="Prénom" />
-            <TableColumn fx:id="nicknameColumn"  prefWidth="73.0"  text="Surnom" />
-            <TableColumn fx:id="phoneColumn"     prefWidth="84.0"  text="Téléphone" />
-            <TableColumn fx:id="emailColumn"     prefWidth="69.0"  text="Email" />
-            <TableColumn fx:id="addressColumn"   prefWidth="90.0"  text="Adresse" />
-            <TableColumn fx:id="birthDateColumn" prefWidth="138.0" text="Date de naissance" />
-         </columns>
-      </TableView>
-   </children>
-</AnchorPane>
+</VBox>
