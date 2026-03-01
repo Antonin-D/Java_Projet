@@ -16,8 +16,8 @@
       prefWidth="750.0"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.mycompany.app.view.PersonAdminController"
-      stylesheets="@style.css PersonnAdd.css"
+      fx:controller="com.mycompany.app.view.PersonListController"
+      stylesheets="@style.css"
       styleClass="background">
 
     <!-- Titre -->

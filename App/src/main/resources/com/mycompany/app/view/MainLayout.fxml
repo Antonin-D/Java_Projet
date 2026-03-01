@@ -38,7 +38,11 @@
                 <Button text="➕ Ajouter un contact"
                         onAction="#showAddPerson"
                         styleClass="sidebar-button"/>
-               <Button mnemonicParsing="false" onAction="#showAdminPersons" prefHeight="30.0" prefWidth="168.0" text="Gérer les contacts"/>
+
+               <Button text="⚙ Gérer les contacts"
+                       onAction="#showAdminPersons" 
+                       styleClass="sidebar-button"/>
+                       
          </children>
         </VBox>
     </left>
