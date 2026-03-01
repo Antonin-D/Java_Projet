@@ -1,0 +1,30 @@
+/* ----------------------------- */
+/*        PERSON ADD PAGE        */
+/* ----------------------------- */
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #1e293b;
+}
+.background { 
+    -fx-padding: 30 40 30 40; 
+}
+.subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 14px;
+}
+
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 4);
+}
+
+.form-label {
+    -fx-font-weight: 600;
+    -fx-text-fill: #334155;
+}
+
+
