@@ -1,12 +1,15 @@
 package com.mycompany.app.view;
 
+import com.mycompany.app.db.daos.PersonDao;
 import com.mycompany.app.db.entities.Person;
-import com.mycompany.app.service.PersonService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
@@ -26,7 +29,13 @@ public class PersonListController {
     @FXML private TableColumn<Person, String>      addressColumn;
     @FXML private TableColumn<Person, LocalDate>   birthDateColumn;
 
-    private final PersonService personService = new PersonService();
+    @FXML
+    private TextField searchField;
+    // Liste source complète (non filtrée)
+    private ObservableList<Person> allPersons;
+    // Accès aux opérations de la base de données
+    private PersonDao personDao = new PersonDao();
+
 
     @FXML
     public void initialize() {
@@ -38,7 +47,41 @@ public class PersonListController {
         addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
         birthDateColumn.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
 
-        ObservableList<Person> persons = FXCollections.observableArrayList(personService.listPersons());
-        personTable.setItems(persons);
+        refreshTable();
+    }
+
+
+     private void refreshTable() {
+        allPersons = FXCollections.observableArrayList(personDao.listPersons());
+
+        // Liste filtrée qui réagit à la saisie dans le champ de recherche
+        FilteredList<Person> filteredPersons = new FilteredList<>(allPersons, p -> true);
+
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredPersons.setPredicate(person -> {
+                // Si le champ est vide, on affiche tout
+                if (newValue == null || newValue.isBlank()) {
+                    return true;
+                }
+
+                String filtre = newValue.toLowerCase();
+
+                // Recherche sur nom, prénom, surnom, email, téléphone, adresse
+                if (person.getLastname() != null && person.getLastname().toLowerCase().contains(filtre)) return true;
+                if (person.getFirstname() != null && person.getFirstname().toLowerCase().contains(filtre)) return true;
+                if (person.getNickname() != null && person.getNickname().toLowerCase().contains(filtre)) return true;
+                if (person.getEmailAddress() != null && person.getEmailAddress().toLowerCase().contains(filtre)) return true;
+                if (person.getPhoneNumber() != null && person.getPhoneNumber().toLowerCase().contains(filtre)) return true;
+                if (person.getAddress() != null && person.getAddress().toLowerCase().contains(filtre)) return true;
+
+                return false;
+            });
+        });
+
+        // SortedList pour conserver le tri des colonnes cliquables
+        SortedList<Person> sortedPersons = new SortedList<>(filteredPersons);
+        sortedPersons.comparatorProperty().bind(personTable.comparatorProperty());
+
+        personTable.setItems(sortedPersons);
     }
 }
